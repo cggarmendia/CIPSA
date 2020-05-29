@@ -1,0 +1,81 @@
+﻿@model IEnumerable<CIPSA.M_XI.WebUI.Models.RentalModel>
+
+@{
+    ViewBag.Title = "Alquileres fuera de plazo";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+<h2>Alquileres fuera de plazo</h2>
+
+<label class="paddingTop20 paddingBottom20">
+    <span class="marginRight20">Exportar:</span>
+    <span id="tableExport" class="row form-inline tableExportButton" />
+</label>
+
+<div class="form-group">
+    <table id="lateRental_table" class="display widthFullScreen">
+        <thead>
+            <tr>
+                <th>
+                    Id del Producto
+                </th>
+                <th>
+                    Nombre
+                </th>
+                <th>
+                    Id del Cliente
+                </th>
+                <th>
+                    Nombre
+                </th>
+                <th>
+                    Apellidos
+                </th>
+                <th>
+                    NIF
+                </th>
+                <th>
+                    Días de alquiler
+                </th>
+                <th>
+                    Fecha de alquiler
+                </th>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach (var item in Model)
+            {
+                <tr>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.ArticleId)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.ArticleName)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.ClientId)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.ClientName)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.ClientLastName)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.ClientNIF)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.LateRentalTotalDays)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.RentalDate)
+                    </td>
+                </tr>
+            }
+        </tbody>
+    </table>
+</div>
+
+@section Scripts {
+    @Scripts.Render("~/bundles/datatables")
+    @Scripts.Render("~/Scripts/App/m_XI.shop.lateRental.js")
+}

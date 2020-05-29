@@ -1,0 +1,118 @@
+﻿@model CIPSA.M_XI.WebUI.Models.RegisterRentalModel
+
+@{
+    ViewBag.Title = "Registrar Alquiler";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<div class="row top-buffer">
+    <div class="col-md-6">
+        <div class="form-inline paddingTop20">
+            <fieldset>
+                <legend class="text-center header">Artículos</legend>
+                <div class="row text-center">
+                    @Html.RadioButton("rentedArticleOption", "Películas", false, new { id = "findMovie" })Películas
+                    @Html.RadioButton("rentedArticleOption", "Videojuegos", true, new { id = "findGame" })Videojuegos
+                </div>
+                <div class="row">
+                    <label class="paddingTop20 paddingBottom20">
+                        <span class="marginRight20">Exportar:</span>
+                        <span id="articleTableExport" class="row form-inline tableExportButton" />
+                    </label>
+                </div>
+                <div class="form-group paddingTop20">
+                    <table id="articles_table" class="display widthFullScreen">
+                        <thead>
+                            <tr>
+                                <th>
+                                    ID_ARTICULO
+                                </th>
+                                <th>
+                                    Título
+                                </th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            @foreach (var item in Model.Articles)
+                            {
+                                <tr>
+                                    <td>
+                                        @Html.DisplayFor(modelItem => item.ArticleId)
+                                    </td>
+                                    <td>
+                                        @Html.DisplayFor(modelItem => item.ArticleName)
+                                    </td>
+                                </tr>
+                            }
+                        </tbody>
+                    </table>
+                </div>
+            </fieldset>
+        </div>
+    </div>
+    <div class="col-md-6">
+        <div class="form-inline paddingTop20">
+            <fieldset>
+                <legend class="text-center header">Clientes</legend>
+                <div class="row">
+                    <label class="paddingTop20 paddingBottom20">
+                        <span class="marginRight20">Exportar:</span>
+                        <span id="clientTableExport" class="row form-inline tableExportButton" />
+                    </label>
+                </div>
+                <div class="form-group paddingTop20">
+                    <table id="clients_table" class="display widthFullScreen">
+                        <thead>
+                            <tr>
+                                <th>
+                                    ID_ARTICULO
+                                </th>
+                                <th>
+                                    NIF
+                                </th>
+                                <th>
+                                    Nombre
+                                </th>
+                                <th>
+                                    Apellidos
+                                </th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            @foreach (var item in Model.Clients)
+                            {
+                                <tr>
+                                    <td>
+                                        @Html.DisplayFor(modelItem => item.Id)
+                                    </td>
+                                    <td>
+                                        @Html.DisplayFor(modelItem => item.NIF)
+                                    </td>
+                                    <td>
+                                        @Html.DisplayFor(modelItem => item.Name)
+                                    </td>
+                                    <td>
+                                        @Html.DisplayFor(modelItem => item.LastName)
+                                    </td>
+                                </tr>
+                            }
+                        </tbody>
+                    </table>
+                </div>
+            </fieldset>
+        </div>
+    </div>
+</div>
+
+<div class="row top-buffer">
+    <div class="form-group col-md-12">
+        <div class="col-md-12 text-center">
+            <button id="registerRentalButton" class="btn btn-outline-secondary" type="button">Registrar Alquiler</button>
+        </div>
+    </div>
+</div>
+
+@section Scripts {
+    @Scripts.Render("~/bundles/datatables")
+    @Scripts.Render("~/Scripts/App/m_XI.shop.registerRental.js")
+}

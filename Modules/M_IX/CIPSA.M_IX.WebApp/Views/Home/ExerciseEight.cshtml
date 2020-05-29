@@ -1,0 +1,45 @@
+﻿@{
+    ViewBag.Title = "Ejercicio 8";
+}
+
+<h2>Ejercicio 8</h2>
+
+<div class="form-horizontal">
+    <div class="form-group">
+        <label for="fraseOneFindAndDelete" class="control-label col-sm-2">Frase 1:</label>
+        <div class="col-sm-6">
+            <input type="text" class="form-control" id="fraseOneFindAndDelete" placeholder="write here">
+        </div>
+    </div>
+    <div class="form-group">
+        <label for="findWordFindAndDelete" class="control-label col-sm-2">Palabra a buscar:</label>
+        <div class="col-sm-4">
+            <input type="text" class="form-control" id="findWordFindAndDelete" placeholder="write here">
+        </div>
+        <div class="col-sm-2">
+            <button type="submit" class="btn btn-primary" id="exerciseEightFindAndDelete">Busca y Elimina</button>
+        </div>
+    </div>
+</div>
+<hr />
+<div class="form-horizontal">
+    <div class="form-group">
+        <label for="fraseOneConcat" class="control-label col-sm-2">Frase 1:</label>
+        <div class="col-sm-6">
+            <input type="text" class="form-control" id="fraseOneConcat" placeholder="write here">
+        </div>
+    </div>
+    <div class="form-group">
+        <label for="fraseTwoConcat" class="control-label col-sm-2">Frase 2:</label>
+        <div class="col-sm-4">
+            <input type="text" class="form-control" id="fraseTwoConcat" placeholder="write here">
+        </div>
+        <div class="col-sm-2">
+            <button type="submit" class="btn btn-primary" id="exerciseEightConcat">Concatenar</button>
+        </div>
+    </div>
+</div>
+
+@Scripts.Render("~/bundles/jquery")
+@Scripts.Render("~/bundles/bootstrap")
+@Scripts.Render("~/Scripts/App/m_IX.excercise8.js")

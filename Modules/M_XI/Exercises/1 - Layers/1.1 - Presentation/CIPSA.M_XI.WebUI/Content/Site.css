@@ -1,0 +1,92 @@
+﻿body {
+    padding-top: 50px;
+    padding-bottom: 20px;
+}
+
+/* Set padding to keep content from hitting the edges */
+.body-content {
+    padding-left: 15px;
+    padding-right: 15px;
+}
+
+/* Override the default bootstrap behavior where horizontal description lists 
+   will truncate terms that are too long to fit in the left column 
+*/
+.dl-horizontal dt {
+    white-space: normal;
+}
+
+/* Set width on the form input elements since they're 100% wide by default */
+input,
+select,
+textarea {
+    max-width: 280px;
+}
+
+.top-buffer {
+    margin-top: 20px;
+}
+
+.glyphicon-refresh-animate {
+    -webkit-animation: spinw .7s infinite linear;
+    -moz-animation: spinm .7s infinite linear;
+}
+
+@keyframes spin {
+    from {
+        transform: scale(1) rotate(0deg);
+    }
+
+    to {
+        transform: scale(1) rotate(360deg);
+    }
+}
+
+@-webkit-keyframes spinw {
+    from {
+        -webkit-transform: rotate(0deg);
+    }
+
+    to {
+        -webkit-transform: rotate(360deg);
+    }
+}
+
+@-moz-keyframes spinm {
+    from {
+        -moz-transform: rotate(0deg);
+    }
+
+    to {
+        -moz-transform: rotate(360deg);
+    }
+}
+
+.hide_column {
+    display: none;
+}
+
+.paddingTop70 {
+    padding-top: 70px;
+}
+.paddingTop20 {
+    padding-top: 20px;
+}
+.marginRight20 {
+    margin-right: 20px;
+}
+.marginTop5 {
+    margin-top: 5px;
+}
+.paddingBottom20 {
+    padding-bottom: 5px;
+}
+
+.widthFullScreen {
+    width: 100%;
+}
+
+.tableExportButton {
+    float: right;
+    padding-right: 15px;
+}

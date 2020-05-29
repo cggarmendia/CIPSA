@@ -1,0 +1,29 @@
+﻿@{
+    ViewBag.Title = "Ejercicio 11";
+}
+
+<h2>Ejercicio 11</h2>
+
+<div>
+    <div class="form-group row">
+        <div class="col-sm-2">
+            <input type="text" class="form-control" id="inputExerciseEleven" placeholder="write here">
+        </div>
+        <div class="col-sm-1">
+            <button type="submit" class="btn btn-primary" id="exerciseElevenClick">Traducir</button>
+        </div>
+        <div class="col-sm-2">
+            <input type="text" readonly class="form-control" id="staticTranslate" value="">
+        </div>
+    </div>
+    <div class="form-group row">
+        <div class="col-sm-12">
+            <label for="exerciseElevenOptionsToTranslate">Algunas palabras que puede buscar:</label>
+            <textarea class="form-control" id="exerciseElevenWordToTranslate" rows="6"></textarea>
+        </div>
+    </div>
+</div>
+
+@Scripts.Render("~/bundles/jquery")
+@Scripts.Render("~/bundles/bootstrap")
+@Scripts.Render("~/Scripts/App/m_VI.excercise11.js")

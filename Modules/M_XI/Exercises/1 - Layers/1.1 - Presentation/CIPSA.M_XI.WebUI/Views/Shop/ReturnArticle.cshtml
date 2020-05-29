@@ -1,0 +1,35 @@
+﻿
+@{
+    ViewBag.Title = "Devolver Producto";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<div class="form-inline paddingTop70" id="detailForm">
+    <fieldset>
+        <legend class="text-center header">Devolver Producto</legend>
+
+        <div id="gameManagementAnimate" class="text-center row hide">
+            <div class="col-md-12 text-center">
+                <span class="glyphicon glyphicon-refresh glyphicon-refresh-animate"></span>
+            </div>
+        </div>
+
+        <div id="gameManagementInfo">
+            <div class="row top-buffer">
+                <div class="form-group col-md-6">
+                    <label for="name" class="col-md-4">Id del Producto:</label>
+                    <input type="number" max="2147483647" class="form-control col-md-8" id="articleId">
+                </div>
+                <div class="form-group col-md-6">
+                    <button id="returnArticleButton" class="btn btn-outline-secondary" type="button">Devolver</button>
+                </div>
+            </div>
+        </div>
+
+    </fieldset>
+</div>
+
+@section Scripts {
+    @Scripts.Render("~/Scripts/App/m_XI.shop.returnArticle.js")
+}
+

@@ -1,0 +1,135 @@
+﻿@model IEnumerable<CIPSA.M_XI.WebUI.Models.ClientManagementModel>
+
+@{
+    ViewBag.Title = "Gestión de Clientes";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2>Gestión de Clientes</h2>
+
+<label class="paddingTop20 paddingBottom20">
+    <span class="marginRight20">Exportar:</span>
+    <span id="tableExport" class="row form-inline tableExportButton" />
+</label>
+
+<div class="form-group">
+    <table id="client_table" class="display widthFullScreen">
+        <thead>
+            <tr>
+                <th>
+                    ID
+                </th>
+                <th>
+                    Nombre
+                </th>
+                <th>
+                    Apellidos
+                </th>
+                <th>
+                    NIF
+                </th>
+                <th>
+                    Cumpleaños
+                </th>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach (var item in Model)
+            {
+                <tr>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.Id)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.Name)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.LastName)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.NIF)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.Birthday)
+                    </td>
+                </tr>
+            }
+        </tbody>
+    </table>
+</div>
+
+<div class="row">
+    <div id="tableAdditionalButton" style="float:right;padding-right: 15px;">
+        <div class="dt-buttons">
+            <button id="deleteButton" class="btn btn-outline-secondary" tabindex="0" aria-controls="client_table" type="button" disabled="true">
+                <span>Eliminar</span>
+            </button>
+            <button id="addButton" class="btn btn-outline-secondary" tabindex="0" aria-controls="client_table" type="button">
+                <span>Nuevo</span>
+            </button>
+        </div>
+    </div>
+</div>
+
+<div class="form-inline paddingTop70 hidden" id="detailForm">
+    <fieldset>
+        <legend class="text-center header">Detalles</legend>
+
+        <div id="clientManagementAnimate" class="text-center row hide">
+            <div class="col-md-12 text-center">
+                <span class="glyphicon glyphicon-refresh glyphicon-refresh-animate"></span>
+            </div>
+        </div>
+
+        <div id="clientManagementInfo">
+            <div class="row top-buffer">
+                <div class="col-md-2">
+                </div>
+                <div class="form-group col-md-4">
+                    <label for="name" class="col-md-4">Nombre:</label>
+                    <input type="text" class="form-control col-md-8" id="name" maxlength="9">
+                </div>
+                <div class="form-group col-md-4">
+                    <label for="lastName" class="col-md-4">Apellidos:</label>
+                    <input type="text" class="form-control col-md-8" id="lastName" maxlength="9">
+                </div>
+                <div class="col-md-2">
+                </div>
+            </div>
+            <div class="row top-buffer">
+                <div class="col-md-2">
+                </div>
+                <div class="form-group col-md-4">
+                    <label for="nif" class="col-md-4">NIF:</label>
+                    <input type="text" class="form-control col-md-8" id="nif" maxlength="9">
+                </div>
+                <div class="form-group col-md-4">
+                    <label for="birthday" class="col-md-4">Cumpleaños:</label>
+                    <input type="text" class="form-control col-md-8 datepicker" id="birthday">                    
+                </div>
+                <div class="col-md-2">
+                </div>
+            </div>
+            <div class="row top-buffer">
+                <div class="col-md-2">
+                </div>
+                <div class="form-group col-md-4">
+                </div>
+                <div class="form-group col-md-4">
+                    <div class="col-md-12 pull-right">
+                        <button id="cancelButton" class="btn btn-outline-secondary" type="button">Cancelar</button>
+                        <button id="addOrUpdateButton" class="btn btn-outline-secondary" type="button">Guardar</button>
+                    </div>
+                </div>
+                <div class="col-md-2">
+                </div>
+            </div>
+        </div>
+
+    </fieldset>
+</div>
+
+@section Scripts {
+    @Scripts.Render("~/bundles/datatables")
+    @Scripts.Render("~/Scripts/App/m_XI.shop.clientManagement.js")
+}

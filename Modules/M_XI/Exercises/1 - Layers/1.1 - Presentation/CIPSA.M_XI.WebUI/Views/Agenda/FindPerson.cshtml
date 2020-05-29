@@ -1,0 +1,64 @@
+﻿
+@{
+    ViewBag.Title = "Buscar Persona";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2>Buscar Persona</h2>
+
+<div class="form-inline">
+    <input id="findPersonInput" type="text" class="form-control" placeholder="DNI" aria-label="DNI" aria-describedby="basic-addon2" maxlength="9">
+    <div class="form-group">
+        <button id="findPersonButton" class="btn btn-outline-secondary" type="button">Buscar</button>
+    </div>
+</div>
+
+<div id="findPersonDiv" class="hidden">
+    <br />
+    <hr />
+    <div class="text-center">
+        <label>Datos de la Persona</label>
+    </div>
+    <br />
+    <div class="form-horizontal">
+        <div class="form-group">
+            <label class="col-md-4 control-label">DNI</label>
+            <div class="col-md-8 inputGroupContainer">
+                <div class="input-group">
+                    <span class="input-group-addon">
+                        <i class="glyphicon glyphicon-user"></i>
+                    </span>
+                    <input readonly id="dni" name="dni" class="form-control" value="" type="text">
+                </div>
+            </div>
+        </div>
+        <div class="form-group">
+            <label class="col-md-4 control-label">Nombre</label>
+            <div class="col-md-8 inputGroupContainer">
+                <div class="input-group"><span class="input-group-addon"><i class="glyphicon glyphicon-user"></i></span><input readonly id="name" name="name" class="form-control" value="" type="text"></div>
+            </div>
+        </div>
+        <div class="form-group">
+            <label class="col-md-4 control-label">Apellidos</label>
+            <div class="col-md-8 inputGroupContainer">
+                <div class="input-group"><span class="input-group-addon"><i class="glyphicon glyphicon-user"></i></span><input readonly id="lastName" name="lastName" class="form-control" value="" type="text"></div>
+            </div>
+        </div>
+        <div class="form-group">
+            <label class="col-md-4 control-label">Fecha de Nacimiento</label>
+            <div class="col-md-8 inputGroupContainer">
+                <div class="input-group"><span class="input-group-addon"><i class="glyphicon glyphicon-user"></i></span><input readonly id="birthday" name="birthday" class="form-control" value="" type="text"></div>
+            </div>
+        </div>
+        <div class="form-group">
+            <label class="col-md-4 control-label">Teléfono</label>
+            <div class="col-md-8 inputGroupContainer">
+                <div class="input-group"><span class="input-group-addon"><i class="glyphicon glyphicon-earphone"></i></span><input readonly id="phoneNumber" name="phoneNumber" class="form-control" value="" type="text"></div>
+            </div>
+        </div>
+    </div>
+</div>
+
+@section Scripts {
+    @Scripts.Render("~/Scripts/App/m_XI.agenda.findPerson.js")
+}

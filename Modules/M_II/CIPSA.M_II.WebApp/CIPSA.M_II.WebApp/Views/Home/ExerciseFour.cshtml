@@ -1,0 +1,20 @@
+﻿
+@{
+    ViewBag.Title = "Ejercicio 4";
+}
+
+<h2>Ejercicio 4</h2>
+
+<div>
+    <form>
+        <div class="form-group">
+            <label for="inputAddress2">@ViewBag.Message</label>
+            <input type="text" class="form-control" id="inputExerciseFour" placeholder="Jordi, Emma, or Jorge">
+        </div>
+        <button type="submit" class="btn btn-primary" id="exerciseFourClick">Ok</button>
+    </form>
+</div>
+
+@Scripts.Render("~/bundles/jquery")
+@Scripts.Render("~/bundles/bootstrap")
+@Scripts.Render("~/Scripts/App/m_II.excercise4.js")

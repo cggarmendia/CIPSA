@@ -1,0 +1,111 @@
+﻿@{
+    ViewBag.Title = "Artículos alquilados pendientes";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<div class="row top-buffer">
+    <div class="col-md-6">
+        <div class="form-inline paddingTop20">
+            <fieldset>
+                <legend class="text-center header">Nif del Cliente</legend>
+
+                <div id="clientManagementAnimate" class="text-center row hide">
+                    <div class="col-md-12 text-center">
+                        <span class="glyphicon glyphicon-refresh glyphicon-refresh-animate"></span>
+                    </div>
+                </div>
+
+                <div id="clientManagementInfo">
+                    <div class="row top-buffer">
+                        <div class="form-group col-md-8">
+                            <label for="platform" class="col-md-4 text-right">NIF:</label>
+                            @Html.DropDownList("NIFOptions", (List<SelectListItem>)ViewBag.NIFOptions, new { id = "nif", @class = "form-control" })
+                        </div>
+                        <div class="form-group col-md-4">
+                            <button id="findButton" class="btn btn-outline-secondary" type="button">Buscar</button>
+                        </div>
+                    </div>
+                    <div class="form-group col-md-4">
+
+                    </div>
+                </div>
+
+            </fieldset>
+        </div>
+
+        <div class="form-inline paddingTop20">
+            <fieldset>
+                <legend class="text-center header">Datos del Cliente</legend>
+
+                <div id="clientManagementAnimate" class="text-center row hide">
+                    <div class="col-md-12 text-center">
+                        <span class="glyphicon glyphicon-refresh glyphicon-refresh-animate"></span>
+                    </div>
+                </div>
+
+                <div id="clientManagementInfo">
+                    <div class="row top-buffer">
+                        <div class="form-group col-md-12">
+                            <label for="name" class="col-md-4">Nombre:</label>
+                            <input type="text" class="form-control col-md-8" id="name" maxlength="9" readonly>
+                        </div>
+                    </div>
+                    <div class="row top-buffer">
+                        <div class="form-group col-md-12">
+                            <label for="lastName" class="col-md-4">Apellidos:</label>
+                            <input type="text" class="form-control col-md-8" id="lastName" maxlength="9" readonly>
+                        </div>
+                    </div>
+                    <div class="row top-buffer">
+                        <div class="form-group col-md-12">
+                            <label for="birthday" class="col-md-4">Cumpleaños:</label>
+                            <input type="text" class="form-control col-md-8 datepicker" id="birthday" readonly>
+                        </div>
+                    </div>
+                </div>
+
+            </fieldset>
+        </div>
+    </div>
+    <div class="col-md-6">
+        <div class="form-inline paddingTop20">
+            <fieldset>
+                <legend class="text-center header">Artículos alquilados pendientes</legend>
+                <label class="paddingTop20 paddingBottom20">
+                    <span class="marginRight20">Exportar:</span>
+                    <span id="tableExport" class="row form-inline tableExportButton" />
+                </label>
+                <div class="form-group paddingTop20">
+                    <table id="pendingRentedArticles_table" class="display widthFullScreen">
+                        <thead>
+                            <tr>
+                                <th>
+                                    ID_ARTICULO
+                                </th>
+                                <th>
+                                    Título
+                                </th>
+                                <th>
+                                    FECHA_ALQUILER
+                                </th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td />
+                                <td />
+                                <td />
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </fieldset>
+        </div>
+    </div>
+</div>
+
+
+@section Scripts {
+    @Scripts.Render("~/bundles/datatables")
+    @Scripts.Render("~/Scripts/App/m_XI.shop.pendingRentedArticles.js")
+}
